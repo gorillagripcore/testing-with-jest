@@ -17,3 +17,8 @@ test('peek on stack with two or more elements returns the top element', () => {
     expect(stack.peek()).toBeDefined();
     expect(stack.peek()).toBe(42);
 });
+
+test('push function uses correct spot', () => {
+    stack.push(5);
+    expect(stack.peek()).toBe(5);
+});
