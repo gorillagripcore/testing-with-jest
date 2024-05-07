@@ -23,6 +23,18 @@ test('The stack should be empty in the beginning', async () => {
 	expect(stack).toEqual("n/a");
 });
 
+//Mitt test
+test('Buttons should exist', async () => {
+    let peek = await driver.findElement(By.id('peek'));
+    let pop = await driver.findElement(By.id('pop'));
+    let push = await driver.findElement(By.id('push'));
+
+    //https://jestjs.io/docs/expect#tobetruthy "when you don't care what a value is and you want to ensure a value is true in a boolean context"
+    expect(peek).toBeTruthy();
+    expect(pop).toBeTruthy();
+    expect(push).toBeTruthy();
+});
+
 describe('Clicking "Pusha till stacken"', () => {
 	it('should open a prompt box', async () => {
 		let push = await driver.findElement(By.id('push'));
